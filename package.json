@@ -1,0 +1,33 @@
+{
+  "name": "bing-wallpaper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf lib && tsc",
+    "dev": "cross-env TZ=Asia/Shanghai nodemon --legacy-watch --ignore 'archives/*' scripts/archiveToday.ts",
+    "start": "cross-env TZ=Asia/Shanghai npm run build && node lib/scripts/archiveToday.js",
+    "get-all": "cross-env TZ=Asia/Shanghai npm run build && node lib/scripts/archiveAll.js"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.31",
+    "nodemon": "^2.0.16",
+    "prettier": "^2.6.2",
+    "prettier-plugin-organize-imports": "^2.3.4",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "@types/node-fetch": "2",
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.10",
+    "cross-env": "^7.0.3",
+    "dayjs": "^1.11.2",
+    "node-fetch": "2",
+    "ora": "5"
+  }
+}
